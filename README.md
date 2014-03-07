@@ -8,8 +8,10 @@ been stopped. This happens when you use UI.With.
 2. You should see "Template.two: options helper called" in the console.
 3. Click the "Toggle Template" button.
 4. In the console you should see the CHANGE DATA message followed by:
-  4a. Template.one: options helper called
-  4b. Template.two: options helper called
+
+  a. Template.one: options helper called
+  
+  b. Template.two: options helper called (again even though template is off page)
 
 ### Why
 
