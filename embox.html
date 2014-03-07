@@ -1,0 +1,31 @@
+<head>
+  <title>embox</title>
+</head>
+
+<body>
+  <button id="toggle">Toggle Template</button>
+
+  <div>
+    {{> dynamicTemplates}}
+  </div>
+</body>
+
+<template name="dynamicTemplates">
+  {{#if showFirstTemplate}}
+    {{> one}}
+  {{else}}
+    {{> two}}
+  {{/if}}
+</template>
+
+<template name="one">
+  {{#with options}}
+    one
+  {{/with}}
+</template>
+
+<template name="two">
+  {{#with options}}
+    two
+  {{/with}}
+</template>
