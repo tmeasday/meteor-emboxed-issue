@@ -12,20 +12,22 @@
 
 <template name="dynamicTemplates">
   {{#if showFirstTemplate}}
-    {{> one}}
+    {{> one oneData}}
   {{else}}
-    {{> two}}
+    {{> two twoData}}
   {{/if}}
 </template>
 
 <template name="one">
-  {{#each options}}
-    one
-  {{/each}}
+  {{> three options}}
 </template>
 
 <template name="two">
-  {{#each options}}
-    two
+  {{> three options}}
+</template>
+
+<template name="three">
+  {{#each foo}}
+    {{this}}
   {{/each}}
 </template>

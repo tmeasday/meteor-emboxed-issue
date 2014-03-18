@@ -69,7 +69,7 @@ if (Meteor.isClient) {
   Template.one.helpers({
     options: function () {
       console.log('%cTemplate.one: options helper called', 'color: blue;');
-      return ['item'];
+      return {foo: ['bar']};
     }
   });
 
@@ -80,7 +80,7 @@ if (Meteor.isClient) {
   Template.two.helpers({
     options: function () {
       console.log('%cTemplate.two: options helper called', 'color: green;');
-      return ['item'];
+      return {foo: ['bar']};
     }
   });
 }
