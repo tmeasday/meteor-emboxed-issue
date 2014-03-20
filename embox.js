@@ -50,7 +50,7 @@ if (Meteor.isClient) {
     })};
   };
 
-  Template.one.data = function () {
+  Template.dynamicTemplates.oneData = function () {
     // this function gets emboxed because
     // {{#with options}} ... {{/with}}
     // compiles to:
@@ -75,7 +75,7 @@ if (Meteor.isClient) {
     }
   });
 
-  Template.two.data = function () {
+  Template.dynamicTemplates.twoData = function () {
     return getData();
   };
 
