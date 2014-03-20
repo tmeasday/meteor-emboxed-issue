@@ -45,7 +45,9 @@ if (Meteor.isClient) {
     // of the emboxedArg causing it to rerun
     // again. 
     dataDep.depend();
-    return {};
+    return {forTemplate: Deps.nonreactive(function () {
+      return Session.get('showFirstTemplate') ? 'one' : 'two';
+    })};
   };
 
   Template.one.data = function () {
@@ -68,7 +70,7 @@ if (Meteor.isClient) {
 
   Template.one.helpers({
     options: function () {
-      console.log('%cTemplate.one: options helper called', 'color: blue;');
+      console.log('%cTemplate.one: options helper called with data for ' + this.forTemplate, 'color: blue;');
       return {foo: ['bar']};
     }
   });
@@ -79,7 +81,7 @@ if (Meteor.isClient) {
 
   Template.two.helpers({
     options: function () {
-      console.log('%cTemplate.two: options helper called', 'color: green;');
+      console.log('%cTemplate.two: options helper called with data for ' + this.forTemplate, 'color: green;');
       return {foo: ['bar']};
     }
   });
